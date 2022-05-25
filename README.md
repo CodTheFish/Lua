@@ -1,0 +1,3 @@
+Well...
+So "Character Calculator" is a program that takes in words and translates them to numbers by alphabetical order.
+"Quiz" is just my *probably* very ineffective way to make a multi-choice quiz in Lua
