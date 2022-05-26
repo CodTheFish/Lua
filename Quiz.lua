@@ -18,7 +18,7 @@ local correctAnswers = {
 }
 local usedQuestions = {}
 local points = 0
-local function tableContains(tbl, element)  --Denne tar in hvilken liste og hva vi leter etter og sjekker om den er der og gir true hvis den er der
+local function tableContains(tbl, element)
     for _, value in pairs(tbl) do
       if value == element then
         return true
@@ -26,7 +26,7 @@ local function tableContains(tbl, element)  --Denne tar in hvilken liste og hva 
     end
     return false
 end
-local function checkAnswer(question, answer) --Denne sjekker om svaret er korrekt bassert på hvilken spørsmål den tilsvarer i correctAnswers
+local function checkAnswer(question, answer)
     if correctAnswers[question] == answer then
         print("Correct!")
         points = points + 1
