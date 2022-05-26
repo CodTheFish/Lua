@@ -20,7 +20,14 @@ local function convert (x)
         x = index
         return x
     end
+    return x
 end
+local operations = {
+    [1] = add,
+    [2] = subtract,
+    [3] = multiply,
+    [4] = divide
+}
 while true do
     while true do
         print("Select operation.")
@@ -28,24 +35,14 @@ while true do
         print("2.Subtract")
         print("3.Multiply")
         print("4.Divide")
+        io.write("Choose here:")
         local operation = io.read("n")
-        print("First number please")
+        io.write("First number please:")
         local x = io.read("n") or io.read("l")
-        print ("Second number please")
+        io.write("Second number please:")
         local y = io.read("n") or io.read("l")
         x = convert(x)
         y = convert(y)
-        if operation > 4 or operation < 1 then
-            print("Please choose something between 1 and 4")
-            break
-        elseif operation == 1 then
-            print(x, "+", y, "=", add(x, y))
-        elseif operation == 2 then
-            print(x, "-", y, "=", subtract(x, y))
-        elseif operation == 3 then
-            print(x, "*", y, "=", multiply(x, y))
-        elseif operation == 4 then
-            print(x, "/", y, "=", divide(x, y))
-        end
+        print(operations[operation](x, y))
     end
 end
